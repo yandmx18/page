@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Deng - Composer & Sound Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>YAN DENG</h1>
+            <h2>Composer | Sound Designer | Arranger | Music Producer</h2>
+            <p>Creating immersive soundscapes and memorable music</p>
+        </div>
+    </section>
+
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <div class="profile-image">
+                <img src="./pic/mugshot.jpg" alt="Yan Deng">
+            </div>
+            <div class="profile-text">
+                <h2>About Me</h2>
+                <p>Yan Deng (b. 2001) is a composer, a musician, and a music engineer. Born in China, Yan grew interests into music at the age of three as she heard the sound of a violin passing by a music school.
+                </p>
+                <p>Yan completed her undergraduate degree (BA) at the University of Rochester, where she studied composition with Patrick Holcomb, Johnny MacMillan, Keane Southard, and Yi-Ning Lo; piano with Patricia Hanson Elizabeth Crecca, Lorenzo Medel, and Matthew Figel at the Eastman School of Music. Yan is currently pursuing her graduate degree--MM in Scoring for Film and Visual Media-- at the Jacobs School of Music, studying with Larry Groupé and Steven Thomas Wayne.</p>
+                <p>Right now, Yan is pursuing her career as a multi-talented sound artist. Though classically trained, she loves writing music for films, games, TVs, and so on. In the meanwhile, she seeks every possibility to get to know the audio, film, and game worlds better.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="scroll-indicator">
+            <!-- These will be generated dynamically by JavaScript -->
+        </div>
+        <div class="container">
+            <h2>Portfolio</h2>
+            
+            <div class="portfolio-category video-category" id="video-section">
+                <div class="container">
+                    <h3>Video Projects</h3>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <div class="video-container">
+                                <iframe width="340" height="191" src="https://www.youtube.com/embed/gwiyfABYb2g?si=5jncpsfm8CuF7gpL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-title">place_holder</div>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-container">
+                                <iframe width="340" height="191" src="https://www.youtube.com/embed/hGa5V9YqncI?si=hB8JmE9ZK_n4WUPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-title">place_holder</div>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-container">
+                                <iframe width="340" height="191" src="https://www.youtube.com/embed/pDALeiavAvc?si=w58x-418a81jM8c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-title">place_holder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-category music-category" id="music-section">
+                <div class="container">
+                    <h3>Music Compositions</h3>
+                    <div class="music-player">
+                        <iframe allow="autoplay" frameborder="no" height="400" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/328396011&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" width="100%"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-category sound-category" id="sound-section">
+                <div class="container">
+                    <h3>Sound Design</h3>
+                    <div class="music-player">
+                        <iframe allow="autoplay" frameborder="no" height="400" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/328396011&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" width="100%"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all portfolio categories
+            const portfolioCategories = document.querySelectorAll('.portfolio-category');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
+            // Generate scroll bullets dynamically based on portfolio categories
+            portfolioCategories.forEach((category, index) => {
+                // Extract category name from the id
+                const categoryId = category.id;
+                const categoryName = categoryId.replace('-section', '');
+                
+                // Create the bullet
+                const bullet = document.createElement('div');
+                bullet.className = 'scroll-bullet';
+                if (index === 0) bullet.classList.add('active');
+                bullet.setAttribute('data-section', categoryName);
+                bullet.setAttribute('data-target', categoryId);
+                
+                // Create label span inside bullet
+                const label = document.createElement('span');
+                label.className = 'scroll-label';
+                label.textContent = categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
+                
+                // Add bullet to scroll indicator
+                bullet.appendChild(label);
+                scrollIndicator.appendChild(bullet);
+            });
+            
+            // Initially hide the scroll indicator
+            scrollIndicator.classList.add('hidden');
+            
+            // Get all scroll bullets after they've been created
+            const scrollBullets = document.querySelectorAll('.scroll-bullet');
+            
+            // Function to check which section is in view
+            function checkSectionInView() {
+                // Show scroll indicator when portfolio section is in view
+                const portfolioSection = document.querySelector('.portfolio-section');
+                const portfolioBounds = portfolioSection.getBoundingClientRect();
+                const isPortfolioVisible = (
+                    portfolioBounds.top < window.innerHeight && 
+                    portfolioBounds.bottom > 0
+                );
+                
+                if (isPortfolioVisible) {
+                    scrollIndicator.classList.remove('hidden');
+                } else {
+                    scrollIndicator.classList.add('hidden');
+                    return;
+                }
+                
+                // Find the section currently in view
+                portfolioCategories.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    // Check if section is in viewport (more centered in view)
+                    if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
+                        // Update active bullet
+                        scrollBullets.forEach((bullet) => {
+                            bullet.classList.remove('active');
+                        });
+                        scrollBullets[index].classList.add('active');
+                    }
+                });
+            }
+            
+            // // Add click event to bullets for scrolling
+            // scrollBullets.forEach((bullet) => {
+            //     bullet.addEventListener('click', () => {
+            //         const targetId = bullet.getAttribute('data-target');
+            //         const targetSection = document.getElementById(targetId);
+            //         if (targetSection) {
+            //             window.scrollTo({
+            //                 top: targetSection.offsetTop - 100,
+            //                 behavior: 'smooth'
+            //             });
+            //         }
+            //     });
+            // });
+            
+            // Check which section is in view on scroll
+            window.addEventListener('scroll', checkSectionInView);
+            
+            // Initial check
+            checkSectionInView();
+        });
+    </script>
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Interested in working together? Feel free to reach out.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:yandmusic18@gmail.com">yandmusic18@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Social</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/yan.d.mx/" title="Instagram" target="_blank" class="social-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100083971081992" title="Facebook" target="_blank" class="social-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yan-deng-614b18355/" title="LinkedIn" target="_blank" class="social-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://soundcloud.com/yan-deng-669882301" title="SoundCloud" target="_blank" class="social-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c0 .055.045.094.09.094s.089-.045.104-.104l.21-1.319-.21-1.334c0-.061-.044-.093-.09-.093m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.12.119.12.061 0 .105-.061.121-.12l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.075.075.135.15.135.074 0 .135-.06.15-.135l.24-2.544-.24-2.64c-.015-.075-.075-.135-.15-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c.005.09.075.157.159.157.074 0 .158-.061.158-.151l.227-2.563-.227-2.444m.824-.444c-.09 0-.18.089-.18.179l-.194 2.669.194 2.614c0 .09.09.164.18.164.09 0 .168-.061.18-.164l.21-2.614-.2-2.67c-.012-.104-.09-.179-.18-.179m2.535-.809c-.12 0-.224.089-.224.194l-.215 3.49.215 2.214c0 .12.105.225.225.225.119 0 .224-.105.224-.225l.215-2.214-.215-3.49c0-.107-.104-.194-.225-.194m.83-.085c-.135 0-.24.105-.24.24l-.209 3.52.21 2.175c0 .134.105.24.239.24.12 0 .24-.105.24-.24l.24-2.175-.24-3.52c0-.135-.12-.24-.24-.24m.989.4c-.15 0-.254.114-.254.254l-.21 3.157.21 2.144c0 .135.105.254.254.254.15 0 .255-.12.255-.254l.224-2.144-.224-3.157c0-.14-.105-.254-.255-.254m.989-.104c-.164 0-.284.135-.284.284l-.194 2.985.194 2.16c0 .149.12.284.284.284.15 0 .285-.135.285-.284l.224-2.16-.224-2.985c0-.15-.135-.284-.285-.284m1.724.045c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.194 2.89.186 1.336.008.798c0 .09.045.164.126.209.046.029.104.045.165.045.075 0 .134-.03.18-.06.045-.034.08-.084.095-.14.015-.045.015-.09.015-.146l.021-.478.171-1.58-.18-2.891c0-.104-.061-.193-.135-.239m22.39 3.172c-.3.002-.436.21-.436.465v.304H24v-.304c-.005-.255-.135-.465-.436-.465m-1.337-.052v.738c.01 0 .02-.005.025-.005.12 0 .239.06.314.164.09.105.135.224.135.345v2.609c0 .12-.045.239-.135.334-.074.104-.194.164-.314.164-.015 0-.025 0-.025-.005v.794c.02 0 .03.005.049.005.434 0 .854-.194 1.113-.524.285-.346.449-.793.449-1.274v-1.799c0-.48-.165-.934-.449-1.269-.264-.339-.683-.533-1.117-.533-.02 0-.03 0-.05.005m-1.125-.321c-.015 0-.03 0-.045.005v4.361c.016.005.03.005.045.005.456 0 .834-.374.834-.839V3.117c0-.465-.378-.839-.834-.839m-1.557-.7c-.016 0-.03 0-.045.004v5.733c.015.005.03.005.045.005.465 0 .839-.375.839-.839V2.278c0-.465-.374-.839-.839-.839m-5.907.117c-.664 0-1.214.561-1.214 1.215v3.462c0 .664.55 1.214 1.214 1.214h3.939C14.759 9.129 17.059 6.83 17.059 4s-2.3-5.128-5.129-5.128h-2.835M4.795.15c-.194 0-.365.17-.365.359l-.329 3.507.329 1.743c0 .195.17.36.365.36s.365-.165.365-.36l.349-1.743-.349-3.507c0-.195-.17-.359-.365-.359M2.484.15c-.193 0-.344.17-.344.359l-.343 3.507.343 1.743c0 .195.151.36.344.36.193 0 .345-.165.345-.36l.384-1.743-.384-3.507c0-.195-.15-.359-.345-.359"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@DephneDeng" title="YouTube" target="_blank" class="social-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2025 Yan Deng. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="tab-group">
+        Portfolio
+    </div>
+</body>
+</html>

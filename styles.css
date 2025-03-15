@@ -1,0 +1,591 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #C1BAA7; /* Light beige from your color palette */
+    color: #1E2522; /* Dark tone from your palette */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #1E2522; /* Dark tone from your palette */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #C1BAA7; /* Light tone from your palette */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #7B9064; /* Vibrant green from your palette */
+}
+
+/* Hero section styles */
+.hero {
+    height: 50vh; /* Reduced height for more compact layout */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('./pic/bannerbackground.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    backdrop-filter: blur(5px); /* Add blur effect */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    backdrop-filter: blur(2px); /* Additional blur for content */
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 70px; /* Slightly reduced size */
+    margin-bottom: 15px; /* Reduced margin */
+    font-family: 'Courier New', monospace;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.hero h2 {
+    font-size: 22px; /* Slightly reduced size */
+    margin-bottom: 20px; /* Reduced margin */
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 16px; /* Slightly reduced size */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Profile section */
+.profile-section {
+    padding: 80px 0; /* Reduced padding */
+    background-color: #2C3532; /* Dark green from your palette */
+    color: #C1BAA7; /* Light tone */
+}
+
+.profile-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.profile-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.profile-text h2 {
+    font-size: 32px; /* Slightly reduced size */
+    margin-bottom: 20px;
+    color: #7B9064; /* Vibrant green */
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+}
+
+.profile-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Portfolio section */
+.portfolio-section {
+    padding: 70px 0; /* Reduced padding */
+    background: linear-gradient(to bottom, #384037, #2C3532); /* Added gradient background */
+    color: #C1BAA7; /* Light tone */
+    position: relative; /* Added for scroll indicator positioning */
+}
+
+.portfolio-section .container {
+    max-width: 1400px; /* Using your updated width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.portfolio-section h2 {
+    font-size: 32px; /* Slightly reduced size */
+    color: #7B9064; /* Vibrant green */
+    margin-bottom: 40px; /* Reduced margin */
+    font-family: 'Courier New', monospace;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.portfolio-category {
+    margin-bottom: 60px; /* Reduced margin */
+}
+
+/* Different backgrounds for each category */
+.video-category {
+    background: linear-gradient(135deg, #324033, #2A3933);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.music-category {
+    background: linear-gradient(135deg, #3B463A, #2D3C39);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.sound-category {
+    background: linear-gradient(135deg, #43503D, #30443C);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.portfolio-category h3 {
+    font-size: 24px; /* Slightly reduced size */
+    color: #C1BAA7; /* Light tone */
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.portfolio-category h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #7B9064; /* Vibrant green */
+}
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.video-item {
+    width: 340px; /* Consistent width */
+    background-color: #1E2522;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.video-item:hover {
+    transform: translateY(-10px);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-title {
+    padding: 12px; /* Reduced padding */
+    background-color: #1E2522; /* Dark tone */
+    color: #C1BAA7; /* Light tone */
+    font-size: 15px; /* Slightly reduced size */
+    text-align: center;
+}
+
+.music-player {
+    background-color: #1E2522;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    max-width: 950px; /* Slightly reduced width */
+}
+
+/* Adjusting iframe height for more compact layout */
+.music-player iframe {
+    height: 400px;
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 900;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-indicator.hidden {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+    pointer-events: none;
+}
+
+.scroll-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(193, 186, 167, 0.4); /* Light tone with transparency */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-bullet:hover {
+    background-color: rgba(193, 186, 167, 0.8);
+    transform: scale(1.2);
+}
+
+.scroll-bullet.active {
+    background-color: #7B9064; /* Vibrant green */
+    box-shadow: 0 0 10px rgba(123, 144, 100, 0.5);
+    transform: scale(1.3);
+}
+
+.scroll-bullet.active .scroll-label {
+    color: #7B9064; /* Match active bullet color */
+    font-weight: bold;
+}
+
+.scroll-bullet:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgba(193, 186, 167, 0.3);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease;
+}
+
+.scroll-bullet.active:after {
+    width: 25px;
+    background-color: rgba(123, 144, 100, 0.5);
+}
+
+.scroll-bullet:hover:after {
+    width: 20px;
+}
+
+/* Show tooltip on hover */
+.scroll-bullet:before {
+    content: none; /* Removing the generated content */
+}
+
+.scroll-label {
+    position: absolute;
+    left: 25px;
+    top: 55%;
+    white-space: nowrap;
+    background-color: rgba(30, 37, 34, 0.8);
+    color: #C1BAA7;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    opacity: 0.8;
+    transform: translateY(-50%) translateX(0);
+}
+
+.scroll-bullet:hover .scroll-label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Contact section */
+.contact-section {
+    padding: 70px 0; /* Reduced padding */
+    background: linear-gradient(to bottom, #45503B, #3A4338); /* Added gradient */
+    color: #C1BAA7; /* Light tone */
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px; /* Slightly reduced size */
+    margin-bottom: 15px;
+    color: #7B9064; /* Vibrant green */
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+}
+
+.contact-section p {
+    margin-bottom: 30px; /* Reduced margin */
+    font-size: 16px; /* Slightly reduced size */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(30, 37, 34, 0.3); /* Dark tone with transparency */
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item h3 {
+    margin-bottom: 15px;
+    color: #7B9064; /* Vibrant green */
+    font-size: 18px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-links a.social-icon {
+    color: #C1BAA7; /* Light tone */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(30, 37, 34, 0.5); /* Dark tone with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.social-links a.social-icon:hover {
+    background-color: rgba(123, 144, 100, 0.2); /* Vibrant green with transparency */
+    border-color: #7B9064; /* Vibrant green */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-links .icon {
+    width: 18px;
+    height: 18px;
+    fill: #C1BAA7; /* Light tone */
+    transition: fill 0.3s;
+}
+
+.social-links a.social-icon:hover .icon {
+    fill: #7B9064; /* Vibrant green */
+}
+
+.contact-item a {
+    color: #C1BAA7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #7B9064; /* Vibrant green */
+}
+
+/* Footer styles */
+footer {
+    background-color: #1E2522; /* Dark tone from your palette */
+    color: #C1BAA7; /* Light tone */
+    padding: 25px 0;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 14px;
+}
+
+/* Tab group */
+.tab-group {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #445046; /* Medium dark green from your palette */
+    color: #C1BAA7; /* Light tone */
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 5px;
+    z-index: 1000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 50px;
+    }
+    
+    .hero h2 {
+        font-size: 18px;
+    }
+    
+    header {
+        padding: 12px 20px;
+    }
+    
+    nav ul li {
+        margin-left: 15px;
+    }
+    
+    .profile-section .container,
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-image, 
+    .profile-text {
+        width: 100%;
+    }
+    
+    .video-item {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .music-player iframe {
+        height: 350px;
+    }
+    
+    .scroll-indicator {
+        left: 15px;
+        padding: 12px 8px;
+    }
+    
+    .scroll-bullet:before {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero h2 {
+        font-size: 14px;
+    }
+    
+    nav ul li a {
+        font-size: 12px;
+    }
+    
+    .portfolio-section h2,
+    .profile-text h2,
+    .contact-section h2 {
+        font-size: 28px;
+    }
+    
+    .portfolio-category h3 {
+        font-size: 20px;
+    }
+    
+    .scroll-indicator {
+        left: 10px;
+        padding: 10px 6px;
+        border-radius: 15px;
+    }
+    
+    .scroll-bullet {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .scroll-bullet:before {
+        font-size: 11px;
+        padding: 3px 8px;
+        left: 22px;
+    }
+    
+    .scroll-bullet:after {
+        height: 2px;
+    }
+    
+    .scroll-bullet.active:after {
+        width: 20px;
+    }
+}
